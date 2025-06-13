@@ -1,0 +1,14 @@
+#!/bin/bash
+BASEPATH="${HOME}/esp-open-sdk"
+PATH="${BASEPATH}/xtensa-lx106-elf/bin:$PATH";
+export PATH
+
+#ESPTOOL_PORT="/dev/ttyUSB0"
+#export ESPTOOL_PORT
+
+# These are defined in Makefile, probably there is no
+# use of invoking xtensa-gcc directly
+CFLAGS="-I${BASEPATH}/sdk/include"
+LDFLAGS="-L${BASEPATH}/sdk/lib -L${BASEPATH}/xtensa-lx106-elf/lib -L${BASEPATH}/xtensa-lx106-elf/ld -L${BASEPATH}/xtensa-lx106-elf/xtensa-lx106-elf/lib"
+export CFLAGS
+export LDFLAGS
